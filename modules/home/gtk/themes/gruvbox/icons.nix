@@ -1,13 +1,13 @@
 { lib, stdenv, fetchFromGitHub }:
 stdenv.mkDerivation rec {
   pname = "Gruvbox-icons";
-  version = "1.0.1";
+  version = "1.0.2";
 
   src = fetchFromGitHub {
     owner = "Nejern";
     repo = pname;
     rev = "v${version}";
-    sha256 = "sha256-Ke/vNw1BZhBmGzx4fF3mNMwBjyp5pYFkHIq4HVhT9Eg=";
+    sha256 = "sha256-3OuqAZRQkhfJP2vQu4sbj3W5GkX+QdXfLYYBVdwSnB0=";
   };
 
   installPhase = ''
