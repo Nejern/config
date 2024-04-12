@@ -19,14 +19,6 @@
     };
   };
 
-  # Nix
-  nix = {
-    settings = {
-      auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
-    };
-  };
-
   # User
   users.users.${username} = {
     isNormalUser = true;
@@ -62,22 +54,8 @@
   # Windows time support
   time.hardwareClockInLocalTime = true;
 
-  # Locale
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "ru_RU.UTF-8";
-    LC_IDENTIFICATION = "ru_RU.UTF-8";
-    LC_MEASUREMENT = "ru_RU.UTF-8";
-    LC_MONETARY = "ru_RU.UTF-8";
-    LC_NAME = "ru_RU.UTF-8";
-    LC_NUMERIC = "ru_RU.UTF-8";
-    LC_PAPER = "ru_RU.UTF-8";
-    LC_TELEPHONE = "ru_RU.UTF-8";
-    LC_TIME = "ru_RU.UTF-8";
-  };
-
   # System Packages
- environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     home-manager
     git
     neovim
@@ -87,15 +65,6 @@
 
   # OpenGL
   hardware.opengl.enable = true;
-
-  # Display/Desktop Manager
-  services.xserver = {
-    enable = true;
-    xkb = {
-      layout = "us,ru";
-      options = "caps:escape_shifted_capslock";
-    };
-  };
 
   system.stateVersion = "23.11"; # Don't touch this.
 }
