@@ -5,12 +5,23 @@
   };
 
   config = lib.mkIf config.module.gtk.theme.gruvbox.enable {
+    nixpkgs.overlays = [
+      (final: prev: {
+        mypackages = {
+          gruvbox-icons = pkgs.callPackage ./icons.nix { };
+        };
+      })
+    ];
     dconf.settings."org/gnome/desktop/wm/preferences".button-layout = ":minimize,maximize,close";
     gtk = {
       enable = true;
       theme = {
         name = "Gruvbox-Dark-BL";
         package = pkgs.gruvbox-gtk-theme;
+      };
+      iconTheme = {
+        name = "Gruvbox";
+        package = pkgs.mypackages.gruvbox-icons;
       };
       gtk3.extraConfig = {
         Settings = ''
