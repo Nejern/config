@@ -13,7 +13,7 @@
         #clear-history=""@as []
         #next-entry=@as []
         #prev-entry=@as []
-        toggle-menu = [ "<Super> v" ];
+        toggle-menu = [ "<Super>v" ];
       };
     };
   };

@@ -6,6 +6,9 @@
 
   config = lib.mkIf config.module.desktop.gnome.keybindings.enable {
     dconf.settings = {
+      "org/gnome/shell/keybindings" = {
+        toggle-message-tray = [ ];
+      };
       "org/gnome/desktop/wm/keybindings" = {
         close = [ "<Super>q" ];
         begin-move = [ "<Super>m" ];
