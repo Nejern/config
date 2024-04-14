@@ -15,8 +15,8 @@
         indicator-position-max = 3;
         screen-blank = "never";
         show-indicator = "only-active";
-        toggle-state = false;
-        user-enabled = false;
+        #toggle-state = false;
+        #user-enabled = false;
       };
     };
   };
