@@ -13,6 +13,8 @@
       shell.zsh.enable = true;
       # Browser
       firefox.enable = true;
+      # Mail client
+      thunderbird.enable = true;
     };
 
     # Gtk
