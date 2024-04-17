@@ -73,6 +73,7 @@
     go-task
     onlyoffice-bin_latest
     python312Packages.grip
+    fzf
 
     # Fonts
     #(pkgs.nerdfonts.override { fonts = [ "MesloLGSNerdFont" ]; })
