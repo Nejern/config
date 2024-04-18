@@ -17,5 +17,9 @@
   module.program.terminal.alacritty.enable = lib.mkDefault false;
 
   ## Shells
-  module.program.shell.zsh.enable = lib.mkDefault false;
+  module.program.shell.zsh = {
+    enable = lib.mkDefault false;
+    omz.enable = lib.mkDefault true;
+    p10k.enable = lib.mkDefault true;
+  };
 }

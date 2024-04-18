@@ -2,6 +2,10 @@
   options = {
     module.program.shell.zsh.enable =
       lib.mkEnableOption "enables zsh";
+    module.program.shell.zsh.p10k.enable =
+      lib.mkEnableOption "enables zsh p10k";
+    module.program.shell.zsh.omz.enable =
+      lib.mkEnableOption "enables zsh omz";
   };
 
   config = lib.mkIf config.module.program.shell.zsh.enable {
@@ -20,16 +24,6 @@
       # Plugins
       plugins = [
         {
-          name = "p10k";
-          src = pkgs.zsh-powerlevel10k;
-          file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-        }
-        {
-          name = "p10k-config";
-          src = ./p10k-config;
-          file = "p10k.zsh";
-        }
-        {
           name = "zsh-nix-shell";
           file = "nix-shell.plugin.zsh";
           src = pkgs.fetchFromGitHub {
@@ -39,19 +33,27 @@
             sha256 = "1lzrn0n4fxfcgg65v0qhnj7wnybybqzs4adz7xsrkgmcsr0ii8b7";
           };
         }
+        (lib.mkIf config.module.program.shell.zsh.p10k.enable {
+          name = "p10k";
+          src = pkgs.zsh-powerlevel10k;
+          file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+        })
+        (lib.mkIf config.module.program.shell.zsh.p10k.enable {
+          name = "p10k-config";
+          src = ./p10k-config;
+          file = "p10k.zsh";
+        })
       ];
 
       # Oh My Zsh
-      #oh-my-zsh = {
-      #  enable = true;
-      #  plugins = [
-      #    "rust"
-      #    "colored-man-pages"
-      #    "vi-mode"
-      #    "rust"
-      #    "docker-compose"
-      #  ];
-      #};
+      oh-my-zsh = {
+        enable = config.module.program.shell.zsh.omz.enable;
+        plugins = [
+          "rust"
+          "colored-man-pages"
+          "docker-compose"
+        ];
+      };
     };
   };
 }
