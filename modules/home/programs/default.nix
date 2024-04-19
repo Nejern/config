@@ -21,5 +21,6 @@
     enable = lib.mkDefault false;
     omz.enable = lib.mkDefault true;
     p10k.enable = lib.mkDefault true;
+    vi-mode.enable = lib.mkDefault true;
   };
 }

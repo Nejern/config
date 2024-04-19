@@ -6,6 +6,8 @@
       lib.mkEnableOption "enables zsh p10k";
     module.program.shell.zsh.omz.enable =
       lib.mkEnableOption "enables zsh omz";
+    module.program.shell.zsh.vi-mode.enable =
+      lib.mkEnableOption "enables zsh vi-mode";
   };
 
   config = lib.mkIf config.module.program.shell.zsh.enable {
@@ -33,6 +35,11 @@
             sha256 = "1lzrn0n4fxfcgg65v0qhnj7wnybybqzs4adz7xsrkgmcsr0ii8b7";
           };
         }
+        (lib.mkIf config.module.program.shell.zsh.vi-mode.enable {
+          name = "vi-mode";
+          src = pkgs.zsh-vi-mode;
+          file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
+        })
         (lib.mkIf config.module.program.shell.zsh.p10k.enable {
           name = "p10k";
           src = pkgs.zsh-powerlevel10k;
