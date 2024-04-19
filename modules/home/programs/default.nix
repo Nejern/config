@@ -3,6 +3,7 @@
     ./git
     ./firefox
     ./thunderbird
+    ./fzf
 
     ./terminals/alacritty
     ./shells/zsh
@@ -12,6 +13,7 @@
   module.program.git.enable = lib.mkDefault false;
   module.program.firefox.enable = lib.mkDefault false;
   module.program.thunderbird.enable = lib.mkDefault false;
+  module.program.fzf.enable = lib.mkDefault true;
 
   ## Terminals
   module.program.terminal.alacritty.enable = lib.mkDefault false;
