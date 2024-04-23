@@ -8,6 +8,7 @@
     ./extensions/blur-my-shell
     ./extensions/vitals
     ./extensions/caffeine
+    ./extensions/proxy-switcher
   ];
 
   # Settings
@@ -24,5 +25,6 @@
     caffeine.enable = lib.mkDefault true;
     blur-my-shell.enable = lib.mkDefault false;
     vitals.enable = lib.mkDefault false;
+    proxy-switcher.enable = lib.mkDefault false;
   };
 }
