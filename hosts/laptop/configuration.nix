@@ -32,7 +32,10 @@
 
   # Networking
   networking.hostName = hostname;
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    enableStrongSwan = true;
+  };
 
   # Bootloader
   boot.loader = {
