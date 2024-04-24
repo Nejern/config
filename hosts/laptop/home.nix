@@ -70,6 +70,7 @@
     spotify
     insomnia
     jq
+    unzip
     go-task
     onlyoffice-bin_latest
     python312Packages.grip
