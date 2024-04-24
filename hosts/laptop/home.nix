@@ -87,6 +87,7 @@
     dina-font
     #proggyfonts
     nerdfonts
+    nvtopPackages.full
 
     (pkgs.writeShellScriptBin "shell-colors" ''
       #!/usr/bin/env sh
