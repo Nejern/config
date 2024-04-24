@@ -73,6 +73,7 @@
     unzip
     onlyoffice-bin_latest
     python312Packages.grip
+    github-cli
 
     # Fonts
     #(pkgs.nerdfonts.override { fonts = [ "MesloLGSNerdFont" ]; })
