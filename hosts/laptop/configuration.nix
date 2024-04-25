@@ -38,21 +38,21 @@
   };
 
   # Bootloader
-  boot.loader = {
-    grub = {
-      enable = true;
-      device = "nodev";
-      efiSupport = true;
-      useOSProber = true;
-    };
-    efi = {
-      canTouchEfiVariables = true;
-    };
-  };
+  #boot.loader = {
+  #  grub = {
+  #    enable = true;
+  #    device = "nodev";
+  #    efiSupport = true;
+  #    useOSProber = true;
+  #  };
+  #  efi = {
+  #    canTouchEfiVariables = true;
+  #  };
+  #};
   #boot.tmp.useTmpfs = true;
   boot.tmp.cleanOnBoot = true;
-  #boot.loader.systemd-boot.enable = true;
-  #boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Moscow";
