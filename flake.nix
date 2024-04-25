@@ -1,7 +1,7 @@
 {
   description = "NixOS config with flake and home-manager";
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixos-generators, ... }@inputs:
     let
       username = "nejern";
       system = "x86_64-linux";
@@ -13,6 +13,7 @@
       };
     in
     {
+      # OS
       nixosConfigurations = {
         laptop =
           let
@@ -27,6 +28,7 @@
             ];
           };
       };
+      # Home
       homeConfigurations = {
         "${username}" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
@@ -37,6 +39,17 @@
           ];
         };
       };
+      # VM
+      packages.x86_64-linux = {
+        openstack-image = nixos-generators.nixosGenerate {
+          system = "x86_64-linux";
+          format = "openstack";
+          modules = [
+            ./hosts/openstack-image/configuration.nix
+            ./modules/os
+          ];
+        };
+      };
     };
 
   inputs = {
@@ -44,6 +57,11 @@
 
     home-manager = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
