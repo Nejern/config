@@ -88,7 +88,6 @@
     #proggyfonts
     nerdfonts
     nvtopPackages.full
-    steam
 
     (pkgs.writeShellScriptBin "shell-colors" ''
       #!/usr/bin/env sh

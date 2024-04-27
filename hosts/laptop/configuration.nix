@@ -30,6 +30,11 @@
   # Shell
   programs.zsh.enable = true;
 
+  # Steam
+  programs.steam = {
+    enable = true;
+  };
+
   # Networking
   networking.hostName = hostname;
   networking.networkmanager = {
@@ -54,6 +59,17 @@
     useTmpfs = false;
     cleanOnBoot = true;
   };
+
+  #specialisation = {
+  #  on-the-go.configuration = {
+  #    system.nixos.tags = [ "on-the-go" ];
+  #    hardware.nvidia = {
+  #      prime.offload.enable = lib.mkForce true;
+  #      prime.offload.enableOffloadCmd = lib.mkForce true;
+  #      prime.sync.enable = lib.mkForce false;
+  #    };
+  #  };
+  #};
 
   # Set your time zone.
   time.timeZone = "Europe/Moscow";
