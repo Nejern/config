@@ -74,6 +74,7 @@
     onlyoffice-bin_latest
     python312Packages.grip
     github-cli
+    terraform
 
     # Fonts
     #(pkgs.nerdfonts.override { fonts = [ "MesloLGSNerdFont" ]; })
