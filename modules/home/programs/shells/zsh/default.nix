@@ -59,6 +59,7 @@
           "rust"
           "colored-man-pages"
           "docker-compose"
+          "terraform"
         ];
       };
     };
