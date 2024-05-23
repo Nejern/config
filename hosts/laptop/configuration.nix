@@ -12,6 +12,7 @@
     service = {
       audio.enable = true;
       tlp.enable = true;
+      syncthing.enable = true;
     };
     manager = {
       display.gdm.enable = true;
