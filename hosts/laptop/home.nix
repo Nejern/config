@@ -75,6 +75,7 @@
     python312Packages.grip
     github-cli
     terraform
+    cmus
 
     # Fonts
     #(pkgs.nerdfonts.override { fonts = [ "MesloLGSNerdFont" ]; })
