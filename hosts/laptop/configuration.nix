@@ -34,6 +34,11 @@
   # Steam
   programs.steam = {
     enable = true;
+    gamescopeSession.enable = true;
+  };
+  # Gamemode
+  programs.gamemode = {
+    enable = true;
   };
 
   # Networking
