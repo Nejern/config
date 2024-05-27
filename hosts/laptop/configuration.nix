@@ -74,7 +74,13 @@
     neovim
     wget
     curl
+    nh
   ];
+
+  # System Variables
+  environment.sessionVariables = {
+    FLAKE = "/home/${username}/nixos";
+  };
 
   # OpenGL
   hardware.opengl = {
