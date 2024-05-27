@@ -66,6 +66,12 @@
     cleanOnBoot = true;
   };
 
+  # Swap
+  swapDevices = [{
+    device = "/var/lib/swapfile";
+    size = 16 * 1024;
+  }];
+
   #specialisation = {
   #  on-the-go.configuration = {
   #    system.nixos.tags = [ "on-the-go" ];
