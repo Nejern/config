@@ -76,6 +76,7 @@
     github-cli
     terraform
     cmus
+    obsidian
 
     # Fonts
     #(pkgs.nerdfonts.override { fonts = [ "MesloLGSNerdFont" ]; })
