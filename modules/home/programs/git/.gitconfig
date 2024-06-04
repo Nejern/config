@@ -3,9 +3,9 @@
   eol = lf
 
 [user]
-  email = 5qub6pfp@duck.com
+  email = oenikitin@zlp.ooo
   name = Oleg Nikitin
-  signingkey = ~/.ssh/github/signing.pub
+  signingkey = ~/.ssh/signing.pub
 
 [gpg]
   format = ssh
