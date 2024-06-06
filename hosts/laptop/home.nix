@@ -77,6 +77,7 @@
     terraform
     cmus
     obsidian
+    qbittorrent
 
     # Fonts
     #(pkgs.nerdfonts.override { fonts = [ "MesloLGSNerdFont" ]; })
