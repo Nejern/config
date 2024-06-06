@@ -115,7 +115,7 @@
   # Shell
   ###
   home.shellAliases = {
-    v = "$EDITOR";
+    v = "nvim";
 
     # ls
     ls = "eza --color=auto";
