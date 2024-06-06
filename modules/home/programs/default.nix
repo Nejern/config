@@ -6,6 +6,7 @@
     ./fzf
 
     ./terminals/alacritty
+    ./terminals/kitty
     ./shells/zsh
   ];
 
@@ -17,6 +18,7 @@
 
   ## Terminals
   module.program.terminal.alacritty.enable = lib.mkDefault false;
+  module.program.terminal.kitty.enable = lib.mkDefault false;
 
   ## Shells
   module.program.shell.zsh = {

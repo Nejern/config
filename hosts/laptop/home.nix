@@ -8,7 +8,7 @@
     program = {
       git.enable = true;
       # Terminal
-      terminal.alacritty.enable = true;
+      terminal.kitty.enable = true;
       # Shell
       shell.zsh.enable = true;
       # Browser
