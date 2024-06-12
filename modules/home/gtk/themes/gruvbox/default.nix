@@ -9,6 +9,7 @@
       (final: prev: {
         mypackages = {
           gruvbox-icons = pkgs.callPackage ./icons.nix { };
+          gruvbox-gtk-theme = pkgs.callPackage ./theme.nix { };
         };
       })
     ];
@@ -16,8 +17,8 @@
     gtk = {
       enable = true;
       theme = {
-        name = "Gruvbox-Dark-BL";
-        package = pkgs.gruvbox-gtk-theme;
+        name = "Gruvbox-Pink-Dark";
+        package = pkgs.mypackages.gruvbox-gtk-theme;
       };
       iconTheme = {
         name = "Gruvbox";
