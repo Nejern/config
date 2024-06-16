@@ -8,14 +8,13 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "gruvbox-gtk-theme";
-  version = "unstable-2024-06-12";
+  version = "unstable-2024-06-16";
 
   src = fetchFromGitHub {
-    #owner = "Fausto-Korpsvart";
-    owner = "Nejern";
+    owner = "Fausto-Korpsvart";
     repo = "Gruvbox-GTK-Theme";
-    rev = "f9ac8992a1c9c3e72ee7c2ac472a8cda9b7d7dbf";
-    hash = "sha256-D3kruTDd/iL3dbTCSLB1+LRzge2W3eWagaIhEoX0Il0=";
+    rev = "de4e837044f99286b6a079d7362b809e8a17f404";
+    hash = "sha256-VFm9LpvQXkNB7CYa/DpJeICfdwgf2oXNfH1W2TFg5y0=";
   };
 
   propagatedUserEnvPkgs = [
