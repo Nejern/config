@@ -43,7 +43,7 @@
         name = "Open Terminal";
       };
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-        binding = "<Shift> <Control> <Alt> Delete";
+        binding = "<Shift><Control><Alt>Delete";
         command = "gnome-session-quit --reboot";
         name = "Reboot";
       };
