@@ -75,6 +75,7 @@
     python312Packages.grip
     github-cli
     opentofu
+    terragrunt
     cmus
     obsidian
     qbittorrent
