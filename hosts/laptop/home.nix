@@ -75,6 +75,7 @@
     python312Packages.grip
     github-cli
     opentofu
+    terraform
     terragrunt
     cmus
     obsidian
