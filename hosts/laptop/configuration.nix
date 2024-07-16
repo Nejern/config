@@ -167,16 +167,17 @@
         # Optionally, you may need to select the appropriate driver version for your specific GPU.
         #package = config.boot.kernelPackages.nvidiaPackages.stable;
       };
-      # Steam
-      programs.steam = {
-        enable = true;
-        gamescopeSession.enable = true;
-      };
-      # Gamemode
-      programs.gamemode = {
-        enable = true;
-      };
     };
+  };
+
+  # Steam
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+  };
+  # Gamemode
+  programs.gamemode = {
+    enable = true;
   };
 
   system.stateVersion = "23.11"; # Don't touch this.
