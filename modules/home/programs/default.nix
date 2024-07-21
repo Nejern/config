@@ -1,9 +1,10 @@
 { lib, ... }: {
   imports = [
+    ./fzf
     ./git
     ./firefox
     ./thunderbird
-    ./fzf
+    ./k9s
 
     ./terminals/alacritty
     ./terminals/kitty
@@ -11,10 +12,11 @@
   ];
 
   # Programs
+  module.program.fzf.enable = lib.mkDefault true;
   module.program.git.enable = lib.mkDefault false;
   module.program.firefox.enable = lib.mkDefault false;
   module.program.thunderbird.enable = lib.mkDefault false;
-  module.program.fzf.enable = lib.mkDefault true;
+  module.program.k9s.enable = lib.mkDefault false;
 
   ## Terminals
   module.program.terminal.alacritty.enable = lib.mkDefault false;

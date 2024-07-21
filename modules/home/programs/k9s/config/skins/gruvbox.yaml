@@ -1,0 +1,72 @@
+k9s:
+  # General K9s styles
+  body:
+    fgColor: '#d4be98' #fg0
+    bgColor: '#1d2021' #bg0
+    logoColor: '#d8a657' #yellow
+
+  # ClusterInfoView styles
+  info:
+    fgColor: '#d4be98' #fg0
+    sectionColor: '#7daea3' #blue
+
+  # Frame styles
+  frame:
+    # Borders styles
+    border:
+      sectionColor: '#7daea3' #blue
+      focusColor: '#d8a657' #yellow
+
+    # MenuView attributes and styles
+    menu:
+      fgColor: '#d4be98' #fg0
+      keyColor: '#7daea3' #blue
+      # Used for favorite namespaces
+      numKeyColor: '#d8a657' #yellow
+
+    # CrumbView attributes for history navigation.
+    crumbs:
+      fgColor: '#d4be98' #fg0
+      bgColor: '#1d2021' #bg0
+      activeColor: '#7daea3' #blue
+
+    # Resource status and update styles
+    status:
+      newColor: '#d4be98' #fg0
+      modifyColor: powderblue
+      addColor: lightskyblue
+      errorColor: indianred
+      highlightcolor: royalblue
+      killColor: slategray
+      completedColor: gray
+
+    # Border title styles.
+    title:
+      fgColor: '#d8a657' #yellow
+      bgColor: '#1d2021' #bg0
+      highlightColor: skyblue
+      counterColor: slateblue
+      filterColor: slategray
+  # Specific views styles
+  views:
+    # TableView attributes.
+    table:
+      fgColor: '#d4be98' #fg0
+      bgColor: '#1d2021' #bg0
+      cursorColor: '#7daea3' #blue
+      # Header row styles.
+      header:
+        fgColor: '#d4be98' #fg0
+        bgColor: '#1d2021' #bg0
+        sorterColor: '#e78a4e' #orange
+
+    # YAML info styles.
+    yaml:
+      keyColor: steelblue
+      colonColor: '#7daea3' #blue
+      valueColor: royalblue
+
+    # Logs styles.
+    logs:
+      fgColor: '#d4be98' #fg0
+      bgColor: '#1d2021' #bg0

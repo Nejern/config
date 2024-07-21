@@ -15,6 +15,8 @@
       firefox.enable = true;
       # Mail client
       thunderbird.enable = true;
+      # K8s client
+      k9s.enable = true;
     };
 
     # Gtk
@@ -62,7 +64,6 @@
     kubectl
     kubernetes-helm
     openlens
-    k9s
 
     # Misc
     vesktop
