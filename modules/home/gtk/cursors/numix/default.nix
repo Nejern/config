@@ -5,13 +5,15 @@
   };
 
   config = lib.mkIf config.module.gtk.cursor.numix.enable {
-    dconf.settings."org/gnome/desktop/wm/preferences".button-layout = ":minimize,maximize,close";
+    home.pointerCursor = {
+      gtk.enable = true;
+      #x11.enable = true;
+      package = pkgs.numix-cursor-theme;
+      name = "Numix-Cursor";
+      size = 16;
+    };
     gtk = {
       enable = true;
-      cursorTheme = {
-        name = "Numix-Cursor";
-        package = pkgs.numix-cursor-theme;
-      };
     };
   };
 }
