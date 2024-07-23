@@ -27,21 +27,9 @@
 
     ## Desktop
     desktop = {
-      # Gnome
-      gnome = {
-        # Settings
+      # Hyprland
+      hyprland = {
         settings.enable = true;
-        # Keybindings
-        keybindings.enable = true;
-        # Extensions
-        extension = {
-          dash-to-dock.enable = true;
-          clipboard-indicator.enable = true;
-          gnome-ui-tune.enable = true;
-          caffeine.enable = true;
-          blur-my-shell.enable = false;
-          vitals.enable = false;
-        };
       };
     };
   };

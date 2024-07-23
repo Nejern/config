@@ -16,7 +16,7 @@
     };
     manager = {
       display.gdm.enable = true;
-      desktop.gnome.enable = true;
+      desktop.hyprland.enable = true;
     };
   };
 

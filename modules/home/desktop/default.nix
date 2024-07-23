@@ -1,5 +1,6 @@
 { lib, ... }: {
   imports = [
+    ./hyprland
     ./gnome
   ];
 }
