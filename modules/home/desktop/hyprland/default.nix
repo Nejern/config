@@ -1,5 +1,6 @@
 { config, lib, pkgs, ... }: {
   imports = [
+    ./hyprpaper
     ./ags
   ];
 
@@ -10,21 +11,22 @@
       lib.mkEnableOption "enables hyprland settings";
     module.desktop.hyprland.ags.enable =
       lib.mkEnableOption "enables ags";
+    module.desktop.hyprland.hyprpaper.enable =
+      lib.mkEnableOption "enables hyprpaper";
   };
-
 
   config = lib.mkIf config.module.desktop.hyprland.settings.enable {
     home.packages = with pkgs; [
       wofi
       hyprshot
-      hyprpaper
     ];
-    home.file."./.config/hypr/hyprpaper.conf".source = ./hyprpaper.conf;
 
     wayland.windowManager.hyprland.enable = config.module.desktop.hyprland.enable;
     wayland.windowManager.hyprland.settings = {
       exec-once = [
-        "hyprpaper"
+        (lib.mkIf config.module.desktop.hyprland.hyprpaper.enable
+          "hyprpaper"
+        )
         (lib.mkIf config.module.desktop.hyprland.ags.enable
           "ags"
         )

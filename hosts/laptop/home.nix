@@ -32,6 +32,7 @@
         enable = true;
         settings.enable = true;
         ags.enable = true;
+        hyprpaper.enable = true;
       };
     };
   };
