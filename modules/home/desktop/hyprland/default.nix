@@ -11,10 +11,16 @@
     home.packages = with pkgs; [
       wofi
       hyprshot
+      hyprpaper
     ];
+    home.file."./.config/hypr/hyprpaper.conf".source = ./hyprpaper.conf;
 
     wayland.windowManager.hyprland.enable = config.module.desktop.hyprland.enable;
     wayland.windowManager.hyprland.settings = {
+      exec-once = [
+        "hyprpaper"
+      ];
+
       "$terminal" = "kitty";
       "$browser" = "firefox-developer-edition";
       "$menu" = "wofi --show drun"; # run,drun,dmenu
