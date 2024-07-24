@@ -8,6 +8,7 @@
     environment.systemPackages = with pkgs; [
       wl-clipboard
     ];
+    services.upower.enable = true;
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";
     };

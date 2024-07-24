@@ -126,7 +126,7 @@
       homeConfigurations = {
         "${username}" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          extraSpecialArgs = { inherit username; };
+          extraSpecialArgs = { inherit username inputs; };
           modules = [
             ./hosts/laptop/home.nix
             ./modules/home
@@ -160,5 +160,7 @@
     };
 
     custom-udev-rules.url = "github:MalteT/custom-udev-rules";
+
+    ags.url = "github:Aylur/ags";
   };
 }

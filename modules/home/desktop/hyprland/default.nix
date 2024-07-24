@@ -1,9 +1,15 @@
 { config, lib, pkgs, ... }: {
+  imports = [
+    ./ags
+  ];
+
   options = {
     module.desktop.hyprland.enable =
       lib.mkEnableOption "enables hyprland";
     module.desktop.hyprland.settings.enable =
       lib.mkEnableOption "enables hyprland settings";
+    module.desktop.hyprland.ags.enable =
+      lib.mkEnableOption "enables ags";
   };
 
 
@@ -19,6 +25,9 @@
     wayland.windowManager.hyprland.settings = {
       exec-once = [
         "hyprpaper"
+        (lib.mkIf config.module.desktop.hyprland.ags.enable
+          "ags"
+        )
       ];
 
       "$terminal" = "kitty";
