@@ -29,6 +29,7 @@
     desktop = {
       # Hyprland
       hyprland = {
+        enable = true;
         settings.enable = true;
       };
     };
