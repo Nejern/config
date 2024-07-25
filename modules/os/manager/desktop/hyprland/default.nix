@@ -7,7 +7,9 @@
   config = lib.mkIf config.module.manager.desktop.hyprland.enable {
     environment.systemPackages = with pkgs; [
       wl-clipboard
+      xclip
     ];
+
     services.upower.enable = true;
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";
