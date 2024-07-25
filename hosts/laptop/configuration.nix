@@ -24,7 +24,7 @@
   users.users.${username} = {
     isNormalUser = true;
     description = username;
-    extraGroups = [ "networkmanager" "wheel" "vboxusers" ];
+    extraGroups = [ "networkmanager" "wheel" "vboxusers" "input" ];
     shell = pkgs.zsh;
   };
 
@@ -122,6 +122,25 @@
     tbb
     zlib
   ];
+
+  # Fonts
+  fonts = {
+    fontconfig.enable = true;
+    packages = with pkgs; [
+      font-awesome
+      material-design-icons
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+      liberation_ttf
+      fira-code
+      fira-code-symbols
+      mplus-outline-fonts.githubRelease
+      dina-font
+      #proggyfonts
+      nerdfonts
+    ];
+  };
 
   specialisation = {
     gamemode.configuration = {

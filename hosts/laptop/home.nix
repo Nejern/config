@@ -31,8 +31,8 @@
       hyprland = {
         enable = true;
         settings.enable = true;
-        ags.enable = true;
         hyprpaper.enable = true;
+        waybar.enable = true;
       };
     };
   };
@@ -73,19 +73,6 @@
     cmus
     obsidian
     qbittorrent
-
-    # Fonts
-    #(pkgs.nerdfonts.override { fonts = [ "MesloLGSNerdFont" ]; })
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    liberation_ttf
-    fira-code
-    fira-code-symbols
-    mplus-outline-fonts.githubRelease
-    dina-font
-    #proggyfonts
-    nerdfonts
     nvtopPackages.full
 
     (pkgs.writeShellScriptBin "shell-colors" ''
@@ -100,8 +87,6 @@
       printf "|036| \033[36mCyan \033[m     |046| \033[46mCyan \033[m     |096| \033[96mLight cyan \033[m     |106| \033[106mLight cyan \033[m\n"
     '')
   ];
-  # Enable fonts
-  fonts.fontconfig.enable = true;
 
   home.sessionVariables = {
     EDITOR = "nvim";
