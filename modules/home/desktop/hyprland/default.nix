@@ -2,6 +2,7 @@
   imports = [
     ./hyprpaper
     ./ags
+    ./waybar
   ];
 
   options = {
@@ -9,10 +10,12 @@
       lib.mkEnableOption "enables hyprland";
     module.desktop.hyprland.settings.enable =
       lib.mkEnableOption "enables hyprland settings";
-    module.desktop.hyprland.ags.enable =
-      lib.mkEnableOption "enables ags";
     module.desktop.hyprland.hyprpaper.enable =
       lib.mkEnableOption "enables hyprpaper";
+    module.desktop.hyprland.ags.enable =
+      lib.mkEnableOption "enables ags";
+    module.desktop.hyprland.waybar.enable =
+      lib.mkEnableOption "enables waybar";
   };
 
   config = lib.mkIf config.module.desktop.hyprland.settings.enable {
@@ -29,6 +32,9 @@
         )
         (lib.mkIf config.module.desktop.hyprland.ags.enable
           "ags"
+        )
+        (lib.mkIf config.module.desktop.hyprland.waybar.enable
+          "waybar"
         )
       ];
 
