@@ -22,6 +22,7 @@
     home.packages = with pkgs; [
       wofi
       hyprshot
+      brightnessctl
     ];
 
     wayland.windowManager.hyprland.enable = config.module.desktop.hyprland.enable;
@@ -162,6 +163,10 @@
           # Power
           "$ctrl $alt, DELETE, exec, systemctl -i poweroff"
           "$ctrl $alt $shift, DELETE, exec, systemctl -i reboot"
+
+          # Screen brightness
+          ", XF86MonBrightnessUp, exec, brightnessctl s +5%"
+          ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
         ]
         ++ (
           # workspaces
