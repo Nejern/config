@@ -9,7 +9,8 @@
   "modules-left": [
     //"cpu",
     //"memory"
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "hyprland/submap"
   ],
   "modules-center": [
     "clock"
@@ -24,9 +25,9 @@
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "urgent": "",
-      "active": "",
-      "default": ""
+      "urgent": " ",
+      "active": " ",
+      "default": " "
     },
     "sort-by-number": true
   },
@@ -35,17 +36,17 @@
     "capslock": true,
     "format": "{name} {icon}",
     "format-icons": {
-      "locked": "",
-      "unlocked": ""
+      "locked": " ",
+      "unlocked": " "
     }
   },
   "hyprland/submap": {
     "format": "<span style=\"italic\">{}</span>"
   },
   "mpd": {
-    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-    "format-disconnected": "Disconnected ",
-    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}%  ",
+    "format-disconnected": "Disconnected  ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped  `",
     "unknown-tag": "N/A",
     "interval": 5,
     "consume-icons": {
@@ -59,7 +60,7 @@
       "on": " "
     },
     "single-icons": {
-      "on": "1 "
+      "on": " 1"
     },
     "state-icons": {
       "paused": "",
@@ -85,11 +86,11 @@
     "format-alt": "{:%Y-%m-%d (%Z)}"
   },
   "cpu": {
-    "format": "{usage}% ",
+    "format": "{usage}%  ",
     "tooltip": false
   },
   "memory": {
-    "format": "{}% "
+    "format": "{}%  "
   },
   "temperature": {
     // "thermal-zone": 2,
@@ -144,15 +145,15 @@
     // "interface": "wlp2*", // (Optional) To force the use of this interface
     "format-wifi": "{essid} ({signalStrength}%) ",
     "format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format": "{ifname} via {gwaddr} ",
-    "format-linked": "{ifname} (No IP) ",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "format-linked": "{ifname} (No IP)",
     "format-disconnected": "Disconnected ⚠",
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "wireplumber": {
     // "scroll-step": 1, // %, can be a float
     "format": "{volume}% {icon}",
-    "format-muted": " ",
+    "format-muted": "",
     "format-icons": [
       "",
       "",
