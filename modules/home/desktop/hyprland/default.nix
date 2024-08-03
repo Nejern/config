@@ -27,6 +27,7 @@
       hyprshot
       brightnessctl
       libnotify
+      cliphist
     ];
 
     home.file."./.config/hypr/scripts".source = ./scripts;
@@ -42,6 +43,8 @@
         (lib.mkIf config.module.desktop.hyprland.waybar.enable
           "waybar"
         )
+        "wl-paste --type text --watch cliphist store"
+        "wl-paste --type image --watch cliphist store"
       ];
 
       "$terminal" = "kitty";
@@ -176,6 +179,9 @@
           # Screen brightness
           ", XF86MonBrightnessUp, exec, ~/.config/hypr/scripts/backlight --inc"
           ", XF86MonBrightnessDown, exec, ~/.config/hypr/scripts/backlight --dec"
+
+          # Clipboard history
+          "SUPER, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
         ]
         ++ (
           # workspaces
