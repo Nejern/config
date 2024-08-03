@@ -3,6 +3,7 @@
     ./hyprpaper
     ./ags
     ./waybar
+    ./mako
   ];
 
   options = {
@@ -16,6 +17,8 @@
       lib.mkEnableOption "enables ags";
     module.desktop.hyprland.waybar.enable =
       lib.mkEnableOption "enables waybar";
+    module.desktop.hyprland.mako.enable =
+      lib.mkEnableOption "enables mako";
   };
 
   config = lib.mkIf config.module.desktop.hyprland.settings.enable {
@@ -23,8 +26,10 @@
       wofi
       hyprshot
       brightnessctl
+      libnotify
     ];
 
+    home.file."./.config/hypr/scripts".source = ./scripts;
     wayland.windowManager.hyprland.enable = config.module.desktop.hyprland.enable;
     wayland.windowManager.hyprland.settings = {
       exec-once = [
@@ -164,9 +169,13 @@
           "$ctrl $alt, DELETE, exec, systemctl -i poweroff"
           "$ctrl $alt $shift, DELETE, exec, systemctl -i reboot"
 
+          # Keyboard brightness
+          ", keyboard_brightness_up_shortcut, exec, ~/.config/hypr/scripts/kbbacklight --inc"
+          ", keyboard_brightness_down_shortcut, exec, ~/.config/hypr/scripts/kbbacklight --dec"
+
           # Screen brightness
-          ", XF86MonBrightnessUp, exec, brightnessctl s +5%"
-          ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
+          ", XF86MonBrightnessUp, exec, ~/.config/hypr/scripts/backlight --inc"
+          ", XF86MonBrightnessDown, exec, ~/.config/hypr/scripts/backlight --dec"
         ]
         ++ (
           # workspaces

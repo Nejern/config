@@ -33,6 +33,7 @@
         settings.enable = true;
         hyprpaper.enable = true;
         waybar.enable = true;
+        mako.enable = true;
       };
     };
   };
