@@ -57,6 +57,11 @@
         default-timeout=1500
         group-by=category
 
+        [category=volume]
+        anchor=center
+        default-timeout=1500
+        group-by=category
+
         [category=mpd]
         border-color=#f9e2af
         default-timeout=2000

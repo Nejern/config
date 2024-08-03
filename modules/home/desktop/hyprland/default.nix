@@ -128,6 +128,18 @@
         "$mainMod, mouse:273, resizewindow"
       ];
 
+      binde = [
+        # Volume
+        ", XF86AudioRaiseVolume, exec, ~/.config/hypr/scripts/volume --inc"
+        ", XF86AudioLowerVolume, exec, ~/.config/hypr/scripts/volume --dec"
+        ", XF86AudioMute, exec, ~/.config/hypr/scripts/volume --toggle"
+        #", XF86AudioMicMute, exec, ~/.config/hypr/scripts/volume --toggle-mic"
+
+        # Screen brightness
+        ", XF86MonBrightnessUp, exec, ~/.config/hypr/scripts/backlight --inc"
+        ", XF86MonBrightnessDown, exec, ~/.config/hypr/scripts/backlight --dec"
+      ];
+
       bind =
         [
           # Programs
@@ -173,12 +185,8 @@
           "$ctrl $alt $shift, DELETE, exec, systemctl -i reboot"
 
           # Keyboard brightness
-          ", keyboard_brightness_up_shortcut, exec, ~/.config/hypr/scripts/kbbacklight --inc"
-          ", keyboard_brightness_down_shortcut, exec, ~/.config/hypr/scripts/kbbacklight --dec"
-
-          # Screen brightness
-          ", XF86MonBrightnessUp, exec, ~/.config/hypr/scripts/backlight --inc"
-          ", XF86MonBrightnessDown, exec, ~/.config/hypr/scripts/backlight --dec"
+          #", keyboard_brightness_up_shortcut, exec, ~/.config/hypr/scripts/kbbacklight --inc"
+          #", keyboard_brightness_down_shortcut, exec, ~/.config/hypr/scripts/kbbacklight --dec"
 
           # Clipboard history
           "SUPER, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
