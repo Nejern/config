@@ -75,6 +75,9 @@
     obsidian
     qbittorrent
     nvtopPackages.full
+    winbox
+    traceroute
+    dnsutils
 
     (pkgs.writeShellScriptBin "shell-colors" ''
       #!/usr/bin/env sh
