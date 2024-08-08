@@ -34,6 +34,7 @@
     wayland.windowManager.hyprland.enable = config.module.desktop.hyprland.enable;
     wayland.windowManager.hyprland.settings = {
       exec-once = [
+        "brightnessctl set +0"
         (lib.mkIf config.module.desktop.hyprland.hyprpaper.enable
           "hyprpaper"
         )
