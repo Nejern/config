@@ -74,7 +74,7 @@
     git
     neovim
     wget
-    curl
+    curlFull
     nh
   ];
 
