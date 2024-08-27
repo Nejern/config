@@ -6,7 +6,7 @@
 
   config = lib.mkIf config.module.program.thunderbird.enable {
     home.packages = with pkgs; [
-      thunderbird-bin
+      thunderbird
     ];
   };
 }
