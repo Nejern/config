@@ -34,6 +34,8 @@
         hyprpaper.enable = true;
         waybar.enable = true;
         mako.enable = true;
+        wofi.enable = true;
+        clipboard.enable = true;
       };
     };
   };

@@ -4,6 +4,7 @@
     ./ags
     ./waybar
     ./mako
+    ./wofi
   ];
 
   options = {
@@ -19,15 +20,21 @@
       lib.mkEnableOption "enables waybar";
     module.desktop.hyprland.mako.enable =
       lib.mkEnableOption "enables mako";
+    module.desktop.hyprland.wofi.enable =
+      lib.mkEnableOption "enables wofi";
+    module.desktop.hyprland.clipboard.enable =
+      lib.mkEnableOption "enables clipboard";
   };
 
   config = lib.mkIf config.module.desktop.hyprland.settings.enable {
     home.packages = with pkgs; [
-      wofi
       hyprshot
       brightnessctl
       libnotify
-      cliphist
+      (lib.mkIf config.module.desktop.hyprland.clipboard.enable
+        cliphist)
+      (lib.mkIf config.module.desktop.hyprland.clipboard.enable
+        wl-clip-persist)
     ];
 
     home.file."./.config/hypr/scripts".source = ./scripts;
@@ -36,21 +43,22 @@
       exec-once = [
         "brightnessctl set +0"
         (lib.mkIf config.module.desktop.hyprland.hyprpaper.enable
-          "hyprpaper"
-        )
+          "hyprpaper")
         (lib.mkIf config.module.desktop.hyprland.ags.enable
-          "ags"
-        )
+          "ags")
         (lib.mkIf config.module.desktop.hyprland.waybar.enable
-          "waybar"
-        )
-        "wl-paste --type text --watch cliphist store"
-        "wl-paste --type image --watch cliphist store"
+          "waybar")
+        (lib.mkIf config.module.desktop.hyprland.clipboard.enable
+          "wl-paste --type text --watch cliphist store")
+        (lib.mkIf config.module.desktop.hyprland.clipboard.enable
+          "wl-paste --type image --watch cliphist store")
+        (lib.mkIf config.module.desktop.hyprland.clipboard.enable
+          "wl-clip-persist --clipboard regular")
       ];
 
       "$terminal" = "kitty";
       "$browser" = "firefox-developer-edition";
-      "$menu" = "wofi --show drun"; # run,drun,dmenu
+      "$menu" = lib.mkIf config.module.desktop.hyprland.wofi.enable "wofi --show drun"; # run,drun,dmenu
 
       "monitor" = ", preferred, auto, 1";
 
@@ -189,7 +197,8 @@
           ", XF86KbdBrightness, exec, ~/.config/hypr/scripts/kbbacklight --inc"
 
           # Clipboard history
-          "SUPER, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
+          (lib.mkIf (config.module.desktop.hyprland.wofi.enable && config.module.desktop.hyprland.clipboard.enable)
+            "SUPER, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy")
         ]
         ++ (
           # workspaces
