@@ -34,7 +34,7 @@
           inherit pkgs;
           extraSpecialArgs = { inherit username inputs; };
           modules = [
-            ./hosts/laptop/home.nix
+            ./users/nejern/home.nix
             ./modules/home
           ];
         };
