@@ -80,6 +80,7 @@
     winbox
     traceroute
     dnsutils
+    element-desktop
 
     (pkgs.writeShellScriptBin "shell-colors" ''
       #!/usr/bin/env sh
