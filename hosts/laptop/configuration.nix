@@ -91,10 +91,10 @@
   #  serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
   #};
 
-  # OpenGL
-  hardware.opengl = {
+  # Graphics
+  hardware.graphics = {
     enable = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 
   programs.nix-ld.enable = true;
