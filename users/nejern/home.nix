@@ -1,4 +1,4 @@
-{ config, pkgs, username, ... }: {
+{ pkgs, username, ... }: {
   home.username = username;
   home.homeDirectory = "/home/${username}";
 
@@ -81,6 +81,7 @@
     traceroute
     dnsutils
     element-desktop
+    mattermost-desktop
 
     (pkgs.writeShellScriptBin "shell-colors" ''
       #!/usr/bin/env sh
