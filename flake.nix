@@ -68,5 +68,7 @@
     custom-udev-rules.url = "github:MalteT/custom-udev-rules";
 
     ags.url = "github:Aylur/ags";
+
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
   };
 }

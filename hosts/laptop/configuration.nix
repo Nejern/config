@@ -1,4 +1,8 @@
-{ inputs, config, pkgs, username, hostname, ... }: {
+{ inputs, pkgs, username, hostname, ... }:
+let
+  pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+in
+{
   imports = [
     ./hardware-configuration.nix
   ];
@@ -94,7 +98,9 @@
   # Graphics
   hardware.graphics = {
     enable = true;
+    package = pkgs-unstable.mesa.drivers;
     enable32Bit = true;
+    package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
   };
 
   programs.nix-ld.enable = true;
