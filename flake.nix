@@ -65,10 +65,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    custom-udev-rules.url = "github:MalteT/custom-udev-rules";
+    custom-udev-rules = {
+      url = "github:MalteT/custom-udev-rules";
+    };
 
-    ags.url = "github:Aylur/ags";
+    ags = {
+      url = "github:Aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland = {
+      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }
