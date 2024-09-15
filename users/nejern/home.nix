@@ -82,6 +82,7 @@
     dnsutils
     element-desktop
     mattermost-desktop
+    remmina
 
     (pkgs.writeShellScriptBin "shell-colors" ''
       #!/usr/bin/env sh
