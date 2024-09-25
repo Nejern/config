@@ -16,6 +16,11 @@
       NIXOS_OZONE_WL = "1";
     };
 
+    hardware.graphics = {
+      package = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.mesa.drivers;
+      package32 = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system}.pkgsi686Linux.mesa.drivers;
+    };
+
     programs = {
       hyprland = {
         enable = true;
@@ -34,9 +39,10 @@
       enable = true;
       xdgOpenUsePortal = true;
       config = {
-        hyprland.default = [ "gtk" "hyprland" ];
+        hyprland.default = [ "hyprland" "gtk" ];
       };
       extraPortals = [
+        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland
         pkgs.xdg-desktop-portal-gtk
       ];
     };

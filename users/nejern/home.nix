@@ -57,7 +57,6 @@
     # k8s
     kubectl
     kubernetes-helm
-    openlens
 
     # Misc
     vesktop

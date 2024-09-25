@@ -1,7 +1,7 @@
 { lib
 , stdenvNoCC
 , fetchFromGitHub
-, gnome
+, gnome-shell
 , sassc
 , gnome-themes-extra
 , gtk-engine-murrine
@@ -27,7 +27,7 @@ stdenvNoCC.mkDerivation {
 
   propagatedUserEnvPkgs = [ gtk-engine-murrine ];
 
-  nativeBuildInputs = [ gnome.gnome-shell sassc ];
+  nativeBuildInputs = [ gnome-shell sassc ];
   buildInputs = [ gnome-themes-extra ];
 
   dontBuild = true;
