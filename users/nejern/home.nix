@@ -83,6 +83,9 @@
     element-desktop
     mattermost-desktop
     remmina
+    lutris
+    wineWowPackages.stable
+    winetricks
 
     (pkgs.writeShellScriptBin "shell-colors" ''
       #!/usr/bin/env sh
@@ -99,6 +102,9 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
+
+    WINEARCH = "win64";
+    WINEPREFIX = "$HOME/.wine";
   };
 
   ###
