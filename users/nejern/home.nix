@@ -58,6 +58,9 @@
     kubectl
     kubernetes-helm
 
+    # Games
+    (pkgs.prismlauncher.override { jdks = [ pkgs.temurin-bin-21 pkgs.temurin-bin-8 pkgs.temurin-bin-17 ]; })
+
     # Misc
     vesktop
     telegram-desktop
