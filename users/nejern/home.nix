@@ -76,6 +76,7 @@
     terraform
     terragrunt
     cmus
+    cmusfm
     obsidian
     qbittorrent
     nvtopPackages.full
