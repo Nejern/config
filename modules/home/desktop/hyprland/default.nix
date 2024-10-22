@@ -52,11 +52,9 @@
         (lib.mkIf config.module.desktop.hyprland.waybar.enable
           "waybar")
         (lib.mkIf config.module.desktop.hyprland.clipboard.enable
-          "wl-paste --type text --watch cliphist store")
-        (lib.mkIf config.module.desktop.hyprland.clipboard.enable
-          "wl-paste --type image --watch cliphist store")
-        (lib.mkIf config.module.desktop.hyprland.clipboard.enable
           "wl-clip-persist --clipboard regular")
+        (lib.mkIf config.module.desktop.hyprland.clipboard.enable
+          "wl-paste --watch cliphist copy")
       ];
 
       "$terminal" = "kitty";
@@ -66,7 +64,6 @@
       "monitor" = ", preferred, auto, 1";
 
       master = {
-        "no_gaps_when_only" = "0";
         "new_on_top" = "true";
       };
 
