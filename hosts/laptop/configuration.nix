@@ -7,7 +7,11 @@
   # Modules
   module = {
     program = {
-      virtualbox.enable = true;
+      libvirt = {
+        enable = true;
+        virt-manager.enable = true;
+        ovmf.enable = true;
+      };
       podman.enable = true;
     };
     service = {
