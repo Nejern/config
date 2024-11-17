@@ -2,6 +2,8 @@
   options = {
     module.gtk.theme.gruvbox.enable =
       lib.mkEnableOption "enables Gruvbox theme";
+    module.gtk.theme.gruvbox.extra-buttons.enable =
+      lib.mkEnableOption "enables extra buttons";
   };
 
   config = lib.mkIf config.module.gtk.theme.gruvbox.enable {
@@ -13,7 +15,7 @@
         };
       })
     ];
-    dconf.settings."org/gnome/desktop/wm/preferences".button-layout = ":minimize,maximize,close";
+    dconf.settings."org/gnome/desktop/wm/preferences".button-layout = ":${if config.module.gtk.theme.gruvbox.extra-buttons.enable then "minimize,maximize," else ""}close";
     gtk = {
       enable = true;
       theme = {
