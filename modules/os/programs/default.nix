@@ -3,5 +3,6 @@
     ./virtualbox
     ./podman
     ./libvirt
+    ./wireguard
   ];
 }

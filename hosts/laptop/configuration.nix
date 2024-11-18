@@ -13,6 +13,7 @@
         ovmf.enable = true;
       };
       podman.enable = true;
+      wireguard.enable = true;
     };
     service = {
       udev.rules.enable = true;
