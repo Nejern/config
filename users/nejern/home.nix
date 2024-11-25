@@ -89,6 +89,8 @@
     lutris
     wineWowPackages.stable
     winetricks
+    obs-studio
+    vlc
 
     (pkgs.writeShellScriptBin "shell-colors" ''
       #!/usr/bin/env sh
