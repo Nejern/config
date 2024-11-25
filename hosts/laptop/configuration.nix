@@ -74,6 +74,7 @@
   # Windows time support
   time.hardwareClockInLocalTime = true;
 
+  nixpkgs.config.allowUnfree = true;
   # System Packages
   environment.systemPackages = with pkgs; [
     home-manager

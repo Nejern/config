@@ -21,7 +21,7 @@
           in
           nixpkgs.lib.nixosSystem {
             inherit system;
-            specialArgs = { inherit inputs username hostname pkgs; };
+            specialArgs = { inherit inputs username hostname; };
             modules = [
               ./hosts/laptop/configuration.nix
               ./modules/os
