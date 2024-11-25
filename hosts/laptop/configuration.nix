@@ -39,6 +39,8 @@
   programs.zsh.enable = true;
 
   # Networking
+  services.resolved.enable = true;
+  #boot.initrd.systemd.network.enable = true;
   networking.hostName = hostname;
   networking.networkmanager = {
     enable = true;
