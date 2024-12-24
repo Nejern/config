@@ -61,6 +61,9 @@
     # Games
     (pkgs.prismlauncher.override { jdks = [ pkgs.temurin-bin-21 pkgs.temurin-bin-8 pkgs.temurin-bin-17 ]; })
 
+    # Photo viewer
+    loupe
+
     # Misc
     vesktop
     telegram-desktop
