@@ -107,7 +107,7 @@
 
       input = {
         "kb_layout" = "us, ru";
-        "kb_options" = "grp:win_space_toggle";
+        "kb_options" = "grp:win_space_toggle,caps:escape_shifted_capslock";
 
         "repeat_delay" = "300";
         "repeat_rate" = "40";
