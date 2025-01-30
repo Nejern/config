@@ -35,5 +35,7 @@
         };
       };
     };
+    # Noice suppression
+    programs.noisetorch.enable = true;
   };
 }
