@@ -6,5 +6,9 @@
 
   config = lib.mkIf config.module.program.git.enable {
     home.file.".gitconfig".source = ./.gitconfig;
+    programs.git = {
+      enable = true;
+      lfs.enable = true;
+    };
   };
 }
