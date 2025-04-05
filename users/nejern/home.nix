@@ -12,7 +12,7 @@
       # Shell
       shell.zsh.enable = true;
       # Browser
-      firefox.enable = true;
+      brave.enable = true;
       # Mail client
       thunderbird.enable = true;
       # K8s client
