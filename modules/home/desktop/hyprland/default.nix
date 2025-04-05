@@ -29,6 +29,7 @@
   config = lib.mkIf config.module.desktop.hyprland.settings.enable {
     home.packages = with pkgs; [
       hyprshot
+      hyprpicker
       brightnessctl
       libnotify
       (lib.mkIf config.module.desktop.hyprland.clipboard.enable
@@ -149,6 +150,12 @@
         ", XF86MonBrightnessDown, exec, ~/.config/hypr/scripts/backlight --dec"
       ];
 
+      layerrule = [
+        # Screenshots border workaround
+        "noanim, hyprpicker"
+        "noanim, selection"
+      ];
+
       bind =
         [
           # Programs
@@ -185,9 +192,9 @@
           "$mainMod, Tab, bringactivetotop,"
 
           # Screenshots
-          ", PRINT, exec, hyprshot -m output -c -o ~/Pictures/Screenshots"
-          "$mainMod, PRINT, exec, hyprshot -m window -c -o ~/Pictures/Screenshots"
-          "$mainMod $shift, PRINT, exec, hyprshot -m region -c -o ~/Pictures/Screenshots"
+          ", PRINT, exec, hyprshot -z -m output -o ~/Pictures/Screenshots"
+          "$mainMod, PRINT, exec, hyprshot -z -m window -o ~/Pictures/Screenshots"
+          "$mainMod $shift, PRINT, exec, hyprshot -z -m region -o ~/Pictures/Screenshots"
 
           # Power
           "$ctrl $alt, DELETE, exec, systemctl -i poweroff"
@@ -221,6 +228,7 @@
             10)
         );
     };
+
     wayland.windowManager.hyprland.extraConfig = ''
       # Submaps
       $submap_resize = 🍆 resize
