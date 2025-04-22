@@ -83,7 +83,7 @@
     obsidian
     qbittorrent
     nvtopPackages.full
-    winbox
+    winbox4
     traceroute
     dnsutils
     element-desktop
