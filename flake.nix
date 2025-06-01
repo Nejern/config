@@ -27,6 +27,18 @@
               ./modules/os
             ];
           };
+        pc =
+          let
+            hostname = "Nejern-PC";
+          in
+          nixpkgs.lib.nixosSystem {
+            inherit system;
+            specialArgs = { inherit inputs username hostname; };
+            modules = [
+              ./hosts/pc/configuration.nix
+              ./modules/os
+            ];
+          };
       };
       # Home
       homeConfigurations = {

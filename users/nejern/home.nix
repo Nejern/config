@@ -94,6 +94,8 @@
     winetricks
     vlc
 
+    (pkgs.btop.override { cudaSupport = true; })
+
     (pkgs.writeShellScriptBin "shell-colors" ''
       #!/usr/bin/env sh
       printf "|039| \033[39mDefault \033[m  |049| \033[49mDefault \033[m  |037| \033[37mLight gray \033[m     |047| \033[47mLight gray \033[m\n"
