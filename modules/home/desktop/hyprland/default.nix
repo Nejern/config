@@ -42,7 +42,8 @@
     home.file."./.config/hypr/scripts".source = ./scripts;
     wayland.windowManager.hyprland.enable = config.module.desktop.hyprland.enable;
     wayland.windowManager.hyprland.systemd.enable = true;
-    wayland.windowManager.hyprland.package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    wayland.windowManager.hyprland.package = null;
+    wayland.windowManager.hyprland.portalPackage = null;
     wayland.windowManager.hyprland.settings = {
       exec-once = [
         "brightnessctl set +0"

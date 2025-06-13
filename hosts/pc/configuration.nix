@@ -100,20 +100,13 @@
     wget
     curlFull
     nh
+    gwe
   ];
 
   # System Variables
   environment.sessionVariables = {
-    FLAKE = "/home/${username}/nixos";
+    NH_FLAKE = "/home/${username}/nixos";
   };
-
-  hardware.bluetooth.enable = true;
-  #systemd.user.services.mpris-proxy = {
-  #  description = "Mpris proxy";
-  #  after = [ "network.target" "sound.target" ];
-  #  wantedBy = [ "default.target" ];
-  #  serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
-  #};
 
   # Graphics
   hardware.graphics = {
@@ -218,6 +211,8 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     #package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
+
+  services.cpupower-gui.enable = true;
 
   # Steam
   programs.steam = {

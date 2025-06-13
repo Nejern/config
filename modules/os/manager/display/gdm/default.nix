@@ -5,7 +5,7 @@
   };
 
   config = lib.mkIf config.module.manager.display.gdm.enable {
-    services.xserver = {
+    services = {
       displayManager = {
         gdm = {
           enable = true;
