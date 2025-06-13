@@ -4,5 +4,6 @@
     ./podman
     ./libvirt
     ./wireguard
+    ./obs-studio
   ];
 }

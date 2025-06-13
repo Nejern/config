@@ -7,13 +7,8 @@
   # Modules
   module = {
     program = {
-      #libvirt = {
-      #  enable = true;
-      #  virt-manager.enable = true;
-      #  ovmf.enable = true;
-      #};
-      #podman.enable = true;
       wireguard.enable = true;
+      obs-studio.enable = true;
     };
     service = {
       udev.rules.enable = true;
@@ -223,18 +218,6 @@
   programs.gamemode = {
     enable = true;
   };
-  # OBS
-  programs.obs-studio = {
-    enable = true;
-    enableVirtualCamera = true;
-  };
-  boot.extraModulePackages = with config.boot.kernelPackages; [
-    v4l2loopback
-  ];
-  boot.kernelModules = [ "snd-seq" "snd-rawmidi" "v4l2loopback" ];
-  boot.extraModprobeConfig = ''
-    options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
-  '';
   security.polkit.enable = true;
 
   system.stateVersion = "25.05"; # Don't touch this.
