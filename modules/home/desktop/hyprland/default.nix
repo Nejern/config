@@ -1,4 +1,8 @@
-{ config, lib, pkgs, inputs, ... }: {
+{ config
+, lib
+, pkgs
+, ...
+}: {
   imports = [
     ./hyprpaper
     ./ags
@@ -56,7 +60,7 @@
         (lib.mkIf config.module.desktop.hyprland.clipboard.enable
           "wl-clip-persist --clipboard regular")
         (lib.mkIf config.module.desktop.hyprland.clipboard.enable
-          "wl-paste --watch cliphist copy")
+          "wl-paste --watch cliphist store")
       ];
 
       "$terminal" = "kitty";
