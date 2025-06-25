@@ -102,7 +102,7 @@
 
   # System Variables
   environment.sessionVariables = {
-    FLAKE = "/home/${username}/nixos";
+    NH_FLAKE = "/home/${username}/nixos";
   };
 
   hardware.bluetooth.enable = true;
