@@ -89,10 +89,12 @@
     element-desktop
     mattermost-desktop
     remmina
+    vlc
+
     lutris
     wineWowPackages.stable
+    protonup-rs
     winetricks
-    vlc
 
     (pkgs.btop.override { cudaSupport = true; })
 
