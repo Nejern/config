@@ -45,7 +45,7 @@
     home.file."./.config/hypr/xdph.conf".source = ./xdph.conf;
     home.file."./.config/hypr/scripts".source = ./scripts;
     wayland.windowManager.hyprland.enable = config.module.desktop.hyprland.enable;
-    wayland.windowManager.hyprland.systemd.enable = true;
+    wayland.windowManager.hyprland.systemd.enable = false;
     wayland.windowManager.hyprland.package = null;
     wayland.windowManager.hyprland.portalPackage = null;
     wayland.windowManager.hyprland.settings = {
