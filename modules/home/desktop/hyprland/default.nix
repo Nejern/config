@@ -67,7 +67,9 @@
       "$browser" = "brave";
       "$menu" = lib.mkIf config.module.desktop.hyprland.wofi.enable "wofi --show drun"; # run,drun,dmenu
 
-      "monitor" = ", preferred, auto, 1";
+      "monitor" = [
+        ", highrr, auto, 1"
+      ];
 
       master = {
         "new_on_top" = "true";
