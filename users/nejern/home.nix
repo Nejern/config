@@ -116,6 +116,8 @@
 
     WINEARCH = "win64";
     WINEPREFIX = "$HOME/.wine";
+
+    LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
   };
 
   ###
