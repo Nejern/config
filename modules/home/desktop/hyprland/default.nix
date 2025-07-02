@@ -51,12 +51,12 @@
     wayland.windowManager.hyprland.settings = {
       exec-once = [
         "brightnessctl set +0"
-        (lib.mkIf config.module.desktop.hyprland.hyprpaper.enable
-          "hyprpaper")
+        #(lib.mkIf config.module.desktop.hyprland.hyprpaper.enable
+        #  "hyprpaper")  # uwsm systemd enable
         (lib.mkIf config.module.desktop.hyprland.ags.enable
           "ags")
-        (lib.mkIf config.module.desktop.hyprland.waybar.enable
-          "waybar")
+        #(lib.mkIf config.module.desktop.hyprland.waybar.enable
+        #  "waybar") # uwsm systemd enable
         (lib.mkIf config.module.desktop.hyprland.clipboard.enable
           "wl-clip-persist --clipboard regular")
         (lib.mkIf config.module.desktop.hyprland.clipboard.enable
