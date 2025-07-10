@@ -103,6 +103,8 @@
     NH_FLAKE = "/home/${username}/nixos";
   };
 
+  hardware.bluetooth.enable = true;
+
   # Graphics
   hardware.graphics = {
     enable = true;
