@@ -40,6 +40,8 @@
     };
   };
 
+  services.gnome-keyring.enable = true;
+
   home.packages = with pkgs; [
     # EDITOR
     neovim
@@ -90,6 +92,7 @@
     mattermost-desktop
     remmina
     vlc
+    gcr # Provides org.gnome.keyring.SystemPrompter
 
     lutris
     wineWowPackages.stable
