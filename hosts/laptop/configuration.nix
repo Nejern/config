@@ -10,7 +10,6 @@
       libvirt = {
         enable = true;
         virt-manager.enable = true;
-        ovmf.enable = true;
       };
       podman.enable = true;
       wireguard.enable = true;
