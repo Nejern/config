@@ -171,7 +171,7 @@
     LIBVA_DRIVER_NAME = "nvidia";
     WLR_RENDERER = "vulkan";
     SDL_VIDEODRIVER = "wayland";
-    QT_QPA_PLATFORM = "wayland-egl";
+    QT_QPA_PLATFORM = "wayland;xcb";
     CLUTTER_BACKEND = "wayland";
   };
   services.xserver.videoDrivers = [ "nvidia" ];

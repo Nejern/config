@@ -181,7 +181,7 @@
         WLR_DRM_DEVICES = "/dev/dri/card1:/dev/dri/card2";
         WLR_RENDERER = "vulkan";
         SDL_VIDEODRIVER = "wayland";
-        QT_QPA_PLATFORM = "wayland-egl";
+        QT_QPA_PLATFORM = "wayland;xcb";
         CLUTTER_BACKEND = "wayland";
       };
       programs.nix-ld.libraries = with pkgs; [
