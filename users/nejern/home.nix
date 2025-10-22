@@ -66,6 +66,9 @@
     # Photo viewer
     loupe
 
+    # Camera
+    snapshot
+
     # Misc
     vesktop
     telegram-desktop
@@ -93,11 +96,14 @@
     remmina
     vlc
     gcr # Provides org.gnome.keyring.SystemPrompter
+    overskride
 
+    # Games
     lutris
     wineWowPackages.stable
     protonup-rs
     winetricks
+    r2modman
 
     (pkgs.btop.override { cudaSupport = true; })
 

@@ -57,7 +57,9 @@
   networking.hostName = hostname;
   networking.networkmanager = {
     enable = true;
-    enableStrongSwan = true;
+    plugins = [
+      pkgs.networkmanager-strongswan
+    ];
   };
 
   # Bootloader

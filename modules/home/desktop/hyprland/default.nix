@@ -63,12 +63,17 @@
           "wl-paste --watch cliphist store")
       ];
 
+      env = [
+        #"AQ_NO_MODIFIERS,1"
+      ];
+
       "$terminal" = "kitty";
       "$browser" = "brave";
       "$menu" = lib.mkIf config.module.desktop.hyprland.wofi.enable "wofi --show drun"; # run,drun,dmenu
 
       "monitor" = [
-        ", highrr, auto, 1"
+        "HDMI-A-1, highres, auto, 1, bitdepth, 10, cm, hdr, sdrbrightness, 1.0, sdrsaturation, 1.0"
+        ", highrr, auto, 1, vrr, 1"
       ];
 
       master = {
@@ -81,7 +86,7 @@
       };
 
       gestures = {
-        "workspace_swipe" = "true";
+        "workspace_swipe_touch" = "true";
       };
 
       general = {
@@ -140,12 +145,16 @@
       "$alt" = "ALT";
       "$ctrl" = "CTRL";
 
+      binds = {
+        scroll_event_delay = 0;
+      };
+
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
       ];
 
-      binde = [
+      bindte = [
         # Volume
         ", XF86AudioRaiseVolume, exec, ~/.config/hypr/scripts/volume --inc"
         ", XF86AudioLowerVolume, exec, ~/.config/hypr/scripts/volume --dec"
@@ -213,6 +222,11 @@
           # Clipboard history
           (lib.mkIf (config.module.desktop.hyprland.wofi.enable && config.module.desktop.hyprland.clipboard.enable)
             "SUPER, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy")
+
+          # Zoom
+          "$mainMod, mouse_down, exec, hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | grep float | awk '{print $2 + 0.05}')\""
+          "$mainMod, mouse_up, exec, hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | grep float | awk '{new=$2 - 0.05; print (new < 1.0 ? 1.0 : new)}')\""
+          "$mainMod, mouse:274, exec, hyprctl keyword cursor:zoom_factor 1"
         ]
         ++ (
           # workspaces

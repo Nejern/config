@@ -51,8 +51,10 @@
   networking.hostName = hostname;
   networking.networkmanager = {
     enable = true;
-    enableStrongSwan = true;
   };
+
+  # kernel
+  #boot.kernelPackages = pkgs.linuxPackages_6_15;
 
   # Bootloader
   boot.loader = {
@@ -96,6 +98,10 @@
     curlFull
     nh
     gwe
+    (pkgs.writeShellScriptBin "python" ''
+      export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
+      exec ${pkgs.python3}/bin/python "$@"
+    '')
   ];
 
   # System Variables
@@ -129,6 +135,30 @@
     xorg.libXfixes
     libGL
     libva
+
+    # Paradox launcher
+    glib.out
+    nss
+    nspr
+    atk
+    cups
+    dbus
+    gtk3
+    pango
+    cairo
+    xorg.libXdamage
+    libgbm
+    expat
+    xorg.libxcb
+    libxkbcommon
+    alsa-lib
+
+    libuuid
+    libz
+    harfbuzz
+    gdk-pixbuf
+    wayland
+    libdecor
 
     # from https://github.com/NixOS/nixpkgs/blob/nixos-23.05/pkgs/games/steam/fhsenv.nix#L124-L136
     fontconfig
@@ -210,6 +240,7 @@
   };
 
   services.cpupower-gui.enable = true;
+  programs.coolercontrol.enable = true;
 
   # Steam
   programs.steam = {
