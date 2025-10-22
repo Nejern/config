@@ -56,6 +56,7 @@
         openstack-image = nixos-generators.nixosGenerate {
           system = "x86_64-linux";
           format = "openstack";
+          specialArgs = { inherit username inputs; };
           modules = [
             ./hosts/openstack-image/configuration.nix
             ./modules/os
